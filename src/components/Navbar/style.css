@@ -1,0 +1,20 @@
+/* Style info for header/navbar */
+#about-header {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #e45f56;
+    color: beige;
+}
+
+.about-header {
+    color: #e45f56;
+}
+
+.project-title {
+   color: salmon;
+}
+
+/* Style info for main content */
+.about-background {
+    background-color: whitesmoke;
+}

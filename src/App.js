@@ -1,10 +1,9 @@
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"
+import Navbar from './components/Navbar/Navbar.js'
 
 function App() {
   return (
-    <h1>
-      Victor's Portfolio
-    </h1>
+    <Navbar />
   )
 }
 export default App;
