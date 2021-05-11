@@ -1,5 +1,17 @@
 import React from 'react'
 import './style.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faFile } from '@fortawesome/free-solid-svg-icons'
+
+
+
+
+// import {  } from '@fortawesome/free-solid-svg-icons'
+
+
 const Navbar = () => {
 
     return (
@@ -30,7 +42,10 @@ const Navbar = () => {
                                     Resume
             </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a className="dropdown-item " href="assets/resume.pdf" target="_blank"><i className="far fa-file"></i> View
+                                    <a className="dropdown-item " href="assets/resume.pdf" target="_blank">
+                                        <FontAwesomeIcon icon={faFile} style={{ color: "red" }} />
+
+                                        View
                 Resume</a>
                                 </div>
                             </li>
@@ -40,12 +55,16 @@ const Navbar = () => {
                                     Social media
             </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a className="dropdown-item " href="https://linkedin.com/in/victor-codrean" target="_blank"><i
-                                        className="fab fa-linkedin"></i> LinkedIn</a>
-                                    <a className="dropdown-item" href="https://github.com/VictorCodrean" target="_blank"><i
-                                        className="fab fa-github"></i> GitHub</a>
-                                    <a className="dropdown-item" href="https://twitter.com/Victor_Codrean" target="_blank"><i
-                                        className="fab fa-twitter"></i> Twitter</a>
+                                    <a className="dropdown-item " href="https://linkedin.com/in/victor-codrean" target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon icon={faLinkedin} style={{ color: "red" }} />
+                                        LinkedIn</a>
+                                    <a className="dropdown-item" href="https://github.com/VictorCodrean" target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon icon={faGithub} style={{ color: "red" }} />
+                                         GitHub</a>
+                                    <a className="dropdown-item" href="https://twitter.com/Victor_Codrean" target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon icon={faTwitter} style={{ color: "red" }} />
+
+                                        Twitter</a>
                                 </div>
                             </li>
                         </ul>
