@@ -1,3 +1,53 @@
+/* ****************My Portfolio */
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("./background_portfolio.jpg");
+    background-position: center;
+    background-size: cover;
+    /* background-color: white; */
+    height: auto;
+    /* min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; */
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.color-btn {
+    background-color: #e45f56;
+    color: beige;
+}
+
+/* Style info for footer */
+footer {
+    background-color: #404040;
+    color: beige;
+    border-top: 7px solid #e45f56;
+}
+
+.footer-btm {
+    margin-top: auto;
+}
+
+footer ul li a {
+    color: beige;
+    
+}
+
+.font-icons {
+    font-size: 32px;
+    color: #e45f56;
+} 
+
+
+
+
 .App {
   text-align: center;
 }
@@ -37,52 +87,7 @@
   }
 }
 
-/* ****************My Portfolio */
-html {
-    height: 100%;
-}
 
-body {
-    background-image: url(../background_portfolio.jpg);
-    background-position: center;
-    background-size: cover;
-    background-color: white;
-    height: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-}
-
-a:hover{
-    text-decoration: none;
-}
-
-.color-btn {
-    background-color: #e45f56;
-    color: beige;
-}
-
-/* Style info for footer */
-footer {
-    background-color: #404040;
-    color: beige;
-    border-top: 7px solid #e45f56;
-}
-
-.footer-btm {
-    margin-top: auto;
-}
-
-footer ul li a {
-    color: beige;
-    
-}
-
-.font-icons {
-    font-size: 32px;
-    color: #e45f56;
-} 
 
 /* Style info for 'header - h1' to get smaller in px size when on smaller screen. */
 @media screen and (max-width: 375px) {
