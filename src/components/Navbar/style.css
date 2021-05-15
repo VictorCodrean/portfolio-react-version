@@ -3,7 +3,11 @@
     font-size: 2rem;
     font-weight: bold;
     background-color: #e45f56;
-    color: beige;
+    
+}
+
+#header-color {
+ color: beige !important;
 }
 
 .about-header {
