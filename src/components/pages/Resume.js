@@ -6,11 +6,6 @@ import { faFile } from '@fortawesome/free-solid-svg-icons'
 const Resume = () => {
     return (
         <>
-
-            {/* <a className="dropdown-item " href="resume.pdf" target="_blank">
-                    <FontAwesomeIcon icon={faFile} style={{ marginRight: 10 }} />
-                                        View
-                Resume</a> */}
             <div className="container mt-5" style={{ paddingBottom: "150px" }} >
                 <div className="row about-background mx-2" >
 

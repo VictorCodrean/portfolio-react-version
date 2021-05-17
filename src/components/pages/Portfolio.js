@@ -49,7 +49,7 @@ function GetRepos() {
 
     return (
         <>
-            <main className="container">
+            <main className="container" style={{ paddingBottom: "150px" }}>
 
                 <h1 className="my-5 about-header about-background text-center">Portfolio</h1>
 

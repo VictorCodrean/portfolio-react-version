@@ -3,9 +3,9 @@ import React from 'react';
 const Home = () => {
     return (
         <>
-            <div className="container">
+            <div className="container" style={{ paddingBottom: "150px" }}>
                 <div className="row my-5 mx-2">
-                    <div className="col-sm-8 about-background p-4">
+                    <div className="col-sm-12 col-md-8 about-background p-4">
                         <h1 className="about-header">About Me</h1>
                         <hr />
                         <img className="float-start mx-2 img-fluid" src="/EU.png" alt="Victor" />
