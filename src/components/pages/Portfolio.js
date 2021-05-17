@@ -46,6 +46,7 @@ function GetRepos() {
         console.log(sortedRepos);
         setReposToShow(sortedRepos)
     }
+
     return (
         <>
             <main className="container">

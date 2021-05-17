@@ -43,17 +43,10 @@ const Navbar = (props) => {
                             Contact
                              </Link>
                     </li>
-                    <li className="nav-item dropdown">
-                        <p className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li className="nav-item">
+                        <Link to="/resume" className={location.pathname === "/resume" ? "nav-link active" : "nav-link"}>
                             Resume
-            </p>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a className="dropdown-item " href="resume.pdf" target="_blank">
-                                <FontAwesomeIcon icon={faFile} style={{ marginRight: 10 }} />
-                                        View
-                Resume</a>
-                        </div>
+                             </Link>
                     </li>
                     <li className="nav-item dropdown">
                         <p className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"

@@ -5,6 +5,7 @@ import Home from './components/pages/Home.js'
 import Portfolio from './components/pages/Portfolio.js'
 import Contact from './components/pages/Contact.js'
 import Footer from './components/Footer/Footer.js'
+import Resume from './components/pages/Resume'
 import './App.css'
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/resume" component={Resume} />
         <Footer />
       </Router>
     </>
