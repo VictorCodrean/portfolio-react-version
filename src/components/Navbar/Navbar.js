@@ -16,11 +16,11 @@ const Navbar = (props) => {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
 
-            <p className="navbar-brand my-0 px-2 mx-3" id="about-header">
+            <div className="navbar-brand my-0 mx-3" id="about-header">
                 <Link to="/" className="nav-link" id="header-color">
                     Victor Codrean
                              </Link>
-            </p>
+            </div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
