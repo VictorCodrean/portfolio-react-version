@@ -16,7 +16,7 @@ const Navbar = (props) => {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
 
-            <div className="navbar-brand my-0 mx-3" id="about-header">
+            <div className="navbar-brand my-0 mx-4" id="about-header">
                 <Link to="/" className="nav-link" id="header-color">
                     Victor Codrean
                              </Link>
@@ -25,7 +25,7 @@ const Navbar = (props) => {
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse justify-content-end mx-3" id="navbarNavDropdown">
+            <div className="collapse navbar-collapse justify-content-end mx-5" id="navbarNavDropdown">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
                         <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
