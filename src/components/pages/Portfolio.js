@@ -18,7 +18,7 @@ function GetRepos() {
     function pinnedReposApi(all) {
         API.searchPinnedRepos()
             .then(res => {
-                // console.log(res.data);
+                console.log(res.data);
                 setPinnedRepos(res.data)
                 sortingRepos(all, res.data)
             }
@@ -53,7 +53,7 @@ function GetRepos() {
                 <h1 className="my-5 about-header about-background text-center">Portfolio</h1>
 
 
-                <div className="row row-cols-1 row-cols-md-2 g-4">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
 
                     <Card
                         allRepos={allRepos}
