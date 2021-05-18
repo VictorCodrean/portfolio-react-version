@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../utils/Api/API'
-import Card from '../CardSample/Card'
+import Card from '../CardStarred/Card'
+import CardAll from '../CardAll/CardAll'
+import StarredBtn from '../StarredBtn/StarredBtn'
+import AllBtn from '../AllBtn/AllBtn'
+
 
 function GetRepos() {
     const [allRepos, setAllRepos] = useState([]);
     const [pinnedRepos, setPinnedRepos] = useState([]);
     const [reposToShow, setReposToShow] = useState([]);
+    const [btnValue, setbtnValue] = useState();
 
     // const [title, setTitle] = useState("");
 
@@ -19,7 +24,7 @@ function GetRepos() {
     function pinnedReposApi(all) {
         API.searchPinnedRepos()
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setPinnedRepos(res.data)
                 sortingRepos(all, res.data)
             }
@@ -32,6 +37,11 @@ function GetRepos() {
         API.searchRepos()
             .then(res => {
                 console.log(res.data)
+                // const myRepos = res.data.map(repo => 
+                //     repo.owner.login.includes("VictorCodrean")
+                // )
+                // console.log(myRepos);
+                // setAllRepos(MyRepos);
                 setAllRepos(res.data);
                 pinnedReposApi(res.data)
                 // const illPresent = (res.data.map(ill => `https://raw.githubusercontent.com/${ill.owner.login}/${ill.name}/main/avatarImage/avatarImg.gif`))
@@ -45,33 +55,51 @@ function GetRepos() {
         // console.log(pinned);
         const sortedRepos = all.filter(repo1 => pinned.some(repo2 => repo1.name === repo2.repo))
         console.log(sortedRepos);
-        setReposToShow(sortedRepos)
+        setReposToShow(sortedRepos);
     }
 
-    // function getUserData() {
-    //     API.searchUserData()
-    //         .then(res => {
-    //             console.log(res);
-
-    //         })
-    // }
+    function handleBtnClick(event) {
+        // Get the title of the clicked button
+        const btnName = event.target.getAttribute("data-value");
+        console.log(btnName);
+        if (btnName !== "starredRepos") {
+            setReposToShow(allRepos)
+            let valueGiven = "all"
+            setbtnValue(valueGiven)
+            console.log(btnValue);
+        } else {
+            console.log(btnValue);
+            reposApi()
+            let valueGiven = null
+            setbtnValue(valueGiven)
+        }
+    }
 
     return (
         <>
             <main className="container" style={{ paddingBottom: "150px" }}>
-
-                <h1 className="my-5 about-header about-background text-center">Portfolio</h1>
-
-
+                <div className="my-5 about-header about-background d-flex justify-content-around">
+                    <StarredBtn
+                        onClick={handleBtnClick} />
+                    <h1 className="text-center align-self-center">Portfolio</h1>
+                    <AllBtn
+                        onClick={handleBtnClick} />
+                </div>
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
-
-                    <Card
-                        allRepos={allRepos}
-                        pinnedRepos={pinnedRepos}
-                        reposToShow={reposToShow}
-
-
-                    />
+                   
+                    {
+                        btnValue !== "all" ?
+                            <Card
+                                allRepos={allRepos}
+                                pinnedRepos={pinnedRepos}
+                                reposToShow={reposToShow}
+                            /> :
+                            <CardAll
+                                allRepos={allRepos}
+                                pinnedRepos={pinnedRepos}
+                                reposToShow={reposToShow}
+                            />
+                    }
 
                 </div>
             </main>

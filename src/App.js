@@ -21,8 +21,8 @@ function App() {
   function getUserData() {
     API.searchUserData()
       .then(res => {
-        console.log(res.data);
-        console.log(res.data.bio);
+        // console.log(res.data);
+        // console.log(res.data.bio);
         setGithubUser(res.data)
       })
       .catch(err => console.log(err))

@@ -8,7 +8,8 @@ function CardSample(props) {
 
                 <div className="col " key={repo.id}>
                     <div className="card h-100 ">
-                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                        
+                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
                             <h5 className="card-header text-center project-title">{repo.name}</h5>
                         </a>
                         <img className="card-img-top" src={`https://raw.githubusercontent.com/${repo.owner.login}/${repo.name}/main/avatarImg/avatarImg.gif`} alt="repo img" />
