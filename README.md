@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Portfolio-React-Version - [Deployed product](https://victorcodrean.github.io/portfolio-react-version/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
 
-## Available Scripts
+- [Description](#Description)
+- [About page](#About)
+- [Portfolio page](#Portfolio)
+- [Credits](#Credits)
+- [Contributing](#Contributing)
+- [Directory](#Directory)
+- [Screeenshots](#Pictures)
 
-In the project directory, you can run:
+## Description
+   Updated Portfolio page  created within React.
+   Used Github API to render information and return dynamicly on the page
+## About
+* Consistent Navbar from Boostrap for each page.
+    *  On each page contain links to Home/About, Contact, Resume, Social Medias and Portfolio page.
+* Main element in a container:
+    * 1 row and columns (rule of 12 Bootstrap Gryd System)
+* Consistent Footer from Bootstrap for each page.
 
-### `npm start`
+## Portfolio
+* Projects included (having acces to GithubApi repos - rendering directly from Github)
+    * buttonsHandlers to handle what to render(dinamic): All projects or just the pinned Ones
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Framework
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*   React (functional method) 
+    ```
+        function GetRepos() {
+        const [allRepos, setAllRepos] = useState([]);
+        const [pinnedRepos, setPinnedRepos] = useState([]);
+        const [reposToShow, setReposToShow] = useState([]);
+        const [btnValue, setbtnValue] = useState();
 
-### `npm test`
+        useEffect(() => {
+            reposApi();
+        }, []);
+        }
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*   Filter method to get necessary data 
+    ```
+        function sortingRepos(all, pinned) {
+            const sortedRepos = all.filter(repo1 => pinned.some(repo2 => repo1.name === repo2.repo))
+            console.log(sortedRepos);
+            setReposToShow(sortedRepos);
+        }
+    ```
+    
 
-### `npm run build`
+## Credits
+* List of the resources used to complete this project:
+- [Bootstrap](https://getbootstrap.com/) - Very Usefull with 12 Gryd System and cards availability
+- [StackOverflow](https://stackoverflow.com/) - When documentation not to clear for me STACKOVERFLOW it's very handy
+* - UW curiculum
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
+* Name: Victor Codrean
+* [Email](CodreanVictor@gmail.com)
+* [GitHub](https://github.com/VictorCodrean)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Directory
+* [Deployed Website](https://victorcodrean.github.io/Portfolio-UpToDate/)
+* [GitHub Source](https://github.com/VictorCodrean/Portfolio-UpToDate)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
