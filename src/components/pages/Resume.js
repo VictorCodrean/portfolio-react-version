@@ -11,7 +11,7 @@ const Resume = () => {
 
                     <div className="d-flex justify-content-between">
                         <h1 className="about-header ml-auto px-3 mt-4 mb-0 pb-0">Resume</h1>
-                        <a className="mr-auto mt-3" href="resume.pdf" target="_blank">
+                        <a className="btn btn-outline-primary mr-auto mt-3" href="resume.pdf" target="_blank">
                             <FontAwesomeIcon icon={faFile} style={{ marginRight: 10 }} />
                                         View Resume
                             </a>
