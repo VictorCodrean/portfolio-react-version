@@ -6,20 +6,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faFile } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = (props) => {
+    // const infoBio = props.githubBio
     const location = useLocation();
     return (
+
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
 
             <div className="navbar-brand my-0 mx-4" id="about-header">
                 <Link to="/" className="nav-link" id="header-color">
-                    Victor Codrean
-                             </Link>
+                    {props.fullName}
+                </Link>
             </div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,12 +29,17 @@ const Navbar = (props) => {
             <div className="collapse navbar-collapse justify-content-end mx-5" id="navbarNavDropdown">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
+                        <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}
+                            // bio={infoBio}
+                        >
                             Home
                              </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/portfolio" className={location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}>
+                        <Link to="/portfolio"
+                            className={location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}
+                        >
+
                             Portfolio
                              </Link>
 
@@ -57,7 +63,7 @@ const Navbar = (props) => {
                             <a className="dropdown-item" href="https://linkedin.com/in/victor-codrean" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faLinkedin} style={{ marginRight: 8 }} />
                                         LinkedIn</a>
-                            <a className="dropdown-item" href="https://github.com/VictorCodrean" target="_blank" rel="noopener noreferrer">
+                            <a className="dropdown-item" href={props.githubUserUrl} target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faGithub} style={{ marginRight: 8 }} />
                                          GitHub</a>
                             <a className="dropdown-item" href="https://twitter.com/Victor_Codrean" target="_blank" rel="noopener noreferrer">
@@ -78,5 +84,4 @@ const Navbar = (props) => {
         </nav>
     )
 }
-
 export default Navbar;

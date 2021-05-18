@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = () => {
+function Home(props) {
     return (
         <>
             <div className="container" style={{ paddingBottom: "150px" }}>
@@ -9,6 +9,10 @@ const Home = () => {
                         <h1 className="about-header">About Me</h1>
                         <hr />
                         <img className="float-start mx-2 img-fluid" src="/EU.png" alt="Victor" />
+                        <p>
+                            {/* {props.bio} */}
+                        </p>
+
                         <p>
                             &nbsp; My name is Victor, born in Moldova, I studied at Technical University of Moldova - Civil engineering
                             Industry.

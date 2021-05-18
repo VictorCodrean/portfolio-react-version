@@ -5,7 +5,8 @@ import Card from '../CardSample/Card'
 function GetRepos() {
     const [allRepos, setAllRepos] = useState([]);
     const [pinnedRepos, setPinnedRepos] = useState([]);
-    const [reposToShow, setReposToShow] = useState([])
+    const [reposToShow, setReposToShow] = useState([]);
+
     // const [title, setTitle] = useState("");
 
     useEffect(() => {
@@ -47,6 +48,14 @@ function GetRepos() {
         setReposToShow(sortedRepos)
     }
 
+    // function getUserData() {
+    //     API.searchUserData()
+    //         .then(res => {
+    //             console.log(res);
+
+    //         })
+    // }
+
     return (
         <>
             <main className="container" style={{ paddingBottom: "150px" }}>
@@ -60,6 +69,7 @@ function GetRepos() {
                         allRepos={allRepos}
                         pinnedRepos={pinnedRepos}
                         reposToShow={reposToShow}
+
 
                     />
 

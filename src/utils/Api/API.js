@@ -21,4 +21,10 @@ export default {
         );
     },
 
+    searchUserData: function () {
+        return axios.get(
+            "https://api.github.com/users/VictorCodrean"
+        );
+    }
+
 };
