@@ -7,17 +7,19 @@ import AllBtn from '../AllBtn/AllBtn'
 
 
 function GetRepos() {
+   
+
     const [allRepos, setAllRepos] = useState([]);
     const [pinnedRepos, setPinnedRepos] = useState([]);
     const [reposToShow, setReposToShow] = useState([]);
     const [btnValue, setbtnValue] = useState();
-
+    // const [active, setActive] = useState(false);
     // const [title, setTitle] = useState("");
 
     useEffect(() => {
         reposApi();
         // pinnedReposApi()
-    }, []);
+    });
 
 
 
@@ -44,8 +46,6 @@ function GetRepos() {
                 // setAllRepos(MyRepos);
                 setAllRepos(res.data);
                 pinnedReposApi(res.data)
-                // const illPresent = (res.data.map(ill => `https://raw.githubusercontent.com/${ill.owner.login}/${ill.name}/main/avatarImage/avatarImg.gif`))
-                // console.log(illPresent);
             })
             .catch(err => console.log(err))
     }
@@ -63,7 +63,10 @@ function GetRepos() {
         const btnName = event.target.getAttribute("data-value");
         console.log(btnName);
         if (btnName !== "starredRepos") {
-            setReposToShow(allRepos)
+            // event.currentTarget.classList.add("active")
+            // ---------------------lookup blur---------------------
+            // setReposToShow(allRepos)
+
             let valueGiven = "all"
             setbtnValue(valueGiven)
             console.log(btnValue);
@@ -72,8 +75,11 @@ function GetRepos() {
             reposApi()
             let valueGiven = null
             setbtnValue(valueGiven)
+
         }
     }
+
+   
 
     return (
         <>
@@ -90,14 +96,14 @@ function GetRepos() {
                     {
                         btnValue !== "all" ?
                             <Card
-                                allRepos={allRepos}
+                                // allRepos={allRepos}
                                 pinnedRepos={pinnedRepos}
                                 reposToShow={reposToShow}
                             /> :
                             <CardAll
                                 allRepos={allRepos}
-                                pinnedRepos={pinnedRepos}
-                                reposToShow={reposToShow}
+                            // pinnedRepos={pinnedRepos}
+                            // reposToShow={reposToShow}
                             />
                     }
 

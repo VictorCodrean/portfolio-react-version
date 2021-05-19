@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar.js'
 import Home from './components/pages/Home.js'
 import Portfolio from './components/pages/Portfolio.js'
@@ -8,6 +8,7 @@ import Contact from './components/pages/Contact.js'
 import Footer from './components/Footer/Footer.js'
 import Resume from './components/pages/Resume'
 import API from './utils/Api/API'
+import NoMatch from "./components/pages/NoMatch.js";
 import './App.css'
 
 
@@ -38,10 +39,15 @@ function App() {
           fullName={githubUser.name}
           githubBio={githubUser.bio}
         />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/portfolio" component={Portfolio} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/resume" component={Resume} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/portfolio-react-version" component={Home} />
+          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/resume" component={Resume} />
+          <Route component={NoMatch} />
+        </Switch>
+
         <Footer
           githubUrl={githubUser.html_url}
           fullName={githubUser.name} />

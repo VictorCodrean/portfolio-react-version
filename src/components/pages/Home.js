@@ -8,7 +8,7 @@ function Home(props) {
                     <div className="col-sm-12 col-md-8 about-background p-4">
                         <h1 className="about-header">About Me</h1>
                         <hr />
-                        <img className="float-start mx-2 img-fluid" src="/EU.png" alt="Victor" />
+                        <img className="float-start mx-2 img-fluid" src={process.env.PUBLIC_URL + "/EU.png"} alt="Victor" />
                         <p>
                             {/* {props.bio} */}
                         </p>
